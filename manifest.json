@@ -1,0 +1,26 @@
+{
+  "name": "Bala Stream",
+  "description" : "",
+  "version": "1.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "js": [ "www/js/youtube.js" ],
+      "run_at": "document_idle",
+      "matches": [ "https://www.youtube.com/*" ]
+    }, {
+      "js": [ "www/js/override.js" ],
+      "run_at": "document_start",
+      "matches": [ "https://www.youtube.com/*" ]
+    }
+  ],
+  "permissions": [
+    "downloads",
+    "webRequest",
+    "webRequestBlocking",
+    "https://www.youtube.com/"
+  ],
+  "background": {
+    "scripts": [ "www/js/iframe.js" ]
+  }
+}
